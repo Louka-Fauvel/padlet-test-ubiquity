@@ -45,5 +45,5 @@ return array(
 			"security",
 			"logs"
 			],
-	"style"=>""
+	"style"=>"inverted"
 	);
