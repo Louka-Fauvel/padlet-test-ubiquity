@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f0bc66f701e9f0cc24b0d1e6e53e35ab",
+    "content-hash": "93af605a4c59c691d1aec1b63984d04c",
     "packages": [
         {
             "name": "phpmv/ubiquity",
-            "version": "2.5.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpMv/ubiquity.git",
-                "reference": "725bb04845a08c74a590803147033860e295a678"
+                "reference": "05ceb964b05f7fd52efe2bffff97098df17ecd37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpMv/ubiquity/zipball/725bb04845a08c74a590803147033860e295a678",
-                "reference": "725bb04845a08c74a590803147033860e295a678",
+                "url": "https://api.github.com/repos/phpMv/ubiquity/zipball/05ceb964b05f7fd52efe2bffff97098df17ecd37",
+                "reference": "05ceb964b05f7fd52efe2bffff97098df17ecd37",
                 "shasum": ""
             },
             "require": {
@@ -29,6 +29,7 @@
                 "phpmv/ubiquity-dev": "^0.1",
                 "phpmv/ubiquity-devtools": "dev-master"
             },
+            "default-branch": true,
             "type": "framework",
             "extra": {
                 "branch-alias": {
@@ -60,9 +61,63 @@
             ],
             "support": {
                 "issues": "https://github.com/phpMv/ubiquity/issues",
-                "source": "https://github.com/phpMv/ubiquity/tree/2.5.2"
+                "source": "https://github.com/phpMv/ubiquity/tree/master"
             },
-            "time": "2023-02-05T14:49:12+00:00"
+            "time": "2023-03-17T01:29:04+00:00"
+        },
+        {
+            "name": "phpmv/ubiquity-security",
+            "version": "0.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpMv/ubiquity-security.git",
+                "reference": "210ccc832ac588c9c5fe21b9bd26f7ee649e9bd0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpMv/ubiquity-security/zipball/210ccc832ac588c9c5fe21b9bd26f7ee649e9bd0",
+                "reference": "210ccc832ac588c9c5fe21b9bd26f7ee649e9bd0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "type": "extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ubiquity\\": "src/Ubiquity/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jean-Christophe HERON",
+                    "email": "myaddressmail@gmail.com",
+                    "role": "Lead developer"
+                }
+            ],
+            "description": "Security module for Ubiquity framework",
+            "keywords": [
+                "framework",
+                "mvc",
+                "php",
+                "php-framework",
+                "security",
+                "tools"
+            ],
+            "support": {
+                "issues": "https://github.com/phpMv/ubiquity-security/issues",
+                "source": "https://github.com/phpMv/ubiquity-security/tree/0.0.7"
+            },
+            "time": "2023-03-17T00:44:32+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -789,16 +844,16 @@
         },
         {
             "name": "phpmv/ubiquity-dev",
-            "version": "0.1.41",
+            "version": "0.1.43",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpMv/ubiquity-dev.git",
-                "reference": "859dc085eb8fc0c30dc2297116853da81b9d5fda"
+                "reference": "95b316ff9ce085a5850339c43e5e421d1b8d1977"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpMv/ubiquity-dev/zipball/859dc085eb8fc0c30dc2297116853da81b9d5fda",
-                "reference": "859dc085eb8fc0c30dc2297116853da81b9d5fda",
+                "url": "https://api.github.com/repos/phpMv/ubiquity-dev/zipball/95b316ff9ce085a5850339c43e5e421d1b8d1977",
+                "reference": "95b316ff9ce085a5850339c43e5e421d1b8d1977",
                 "shasum": ""
             },
             "require": {
@@ -837,9 +892,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phpMv/ubiquity-dev/issues",
-                "source": "https://github.com/phpMv/ubiquity-dev/tree/0.1.41"
+                "source": "https://github.com/phpMv/ubiquity-dev/tree/0.1.43"
             },
-            "time": "2023-01-23T00:07:52+00:00"
+            "time": "2023-03-17T00:45:02+00:00"
         },
         {
             "name": "phpmv/ubiquity-devtools",
@@ -1352,7 +1407,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "phpmv/ubiquity": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

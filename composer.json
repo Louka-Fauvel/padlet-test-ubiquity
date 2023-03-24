@@ -10,8 +10,9 @@
 	],
 	"require" : {
 		"php" : ">=8.0",
-		"phpmv/ubiquity": "^2.3",
-		"twig\/twig": "^3.0"
+		"phpmv/ubiquity": "dev-master",
+		"twig\/twig": "^3.0",
+		"phpmv/ubiquity-security": "^0.0.7"
 	},
 	"license" : "Apache-2.0",
 	"authors" : [{

@@ -11,3 +11,4 @@ Router::addRoute("_default", "controllers\\IndexController");
         $instance->setPassword(password_hash($instance->getPassword(), PASSWORD_DEFAULT));
     }
 });
+\Ubiquity\security\data\EncryptionManager::start($config,\Ubiquity\security\data\Encryption::AES256);

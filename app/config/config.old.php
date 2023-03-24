@@ -38,5 +38,4 @@ return array(
 			"controllers"=>"controllers",
 			"rest"=>""
 			],
-	"encryption_key"=>getenv('encryption_key')
 	);
