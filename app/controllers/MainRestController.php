@@ -8,6 +8,8 @@ use Ubiquity\attributes\items\router\Post;
 use Ubiquity\attributes\items\router\Put;
 use Ubiquity\attributes\items\router\Route;
 use Ubiquity\attributes\items\rest\Rest;
+use Ubiquity\contents\transformation\TransformersManager;
+use Ubiquity\controllers\rest\RestServer;
 use Ubiquity\utils\http\URequest;
 
 #[Rest()]
@@ -75,6 +77,7 @@ class MainRestController extends \Ubiquity\controllers\rest\api\json\JsonRestCon
 	*/
 	#[Post('{resource}',priority: 0)]
 	public function add($resource) {
+        TransformersManager::startProd('transform');
 		parent::add_($resource);
 	}
 
@@ -91,4 +94,11 @@ class MainRestController extends \Ubiquity\controllers\rest\api\json\JsonRestCon
 	public function update($resource,...$id ){
 		parent::update_($resource,...$id);
 	}
+
+    protected function getRestServer(): RestServer {
+        $srv = new RestServer($this->config);
+        $srv->setAllowedOrigins(['http://127.0.0.1:3000']);
+        TransformersManager::startProd('toView');
+        return $srv;
+    }
 }

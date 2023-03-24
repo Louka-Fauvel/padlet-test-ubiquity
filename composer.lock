@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpMv/ubiquity.git",
-                "reference": "05ceb964b05f7fd52efe2bffff97098df17ecd37"
+                "reference": "d39748091cbcc7f43d97065ff0af615b3bdaf98b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpMv/ubiquity/zipball/05ceb964b05f7fd52efe2bffff97098df17ecd37",
-                "reference": "05ceb964b05f7fd52efe2bffff97098df17ecd37",
+                "url": "https://api.github.com/repos/phpMv/ubiquity/zipball/d39748091cbcc7f43d97065ff0af615b3bdaf98b",
+                "reference": "d39748091cbcc7f43d97065ff0af615b3bdaf98b",
                 "shasum": ""
             },
             "require": {
@@ -63,7 +63,7 @@
                 "issues": "https://github.com/phpMv/ubiquity/issues",
                 "source": "https://github.com/phpMv/ubiquity/tree/master"
             },
-            "time": "2023-03-17T01:29:04+00:00"
+            "time": "2023-03-24T10:19:39+00:00"
         },
         {
             "name": "phpmv/ubiquity-security",
