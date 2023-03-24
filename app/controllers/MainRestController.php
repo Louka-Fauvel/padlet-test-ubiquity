@@ -1,6 +1,7 @@
 <?php
 namespace controllers;
 
+use Ubiquity\attributes\items\rest\Authorization;
 use Ubiquity\attributes\items\router\Delete;
 use Ubiquity\attributes\items\router\Get;
 use Ubiquity\attributes\items\router\Options;
@@ -10,6 +11,7 @@ use Ubiquity\attributes\items\router\Route;
 use Ubiquity\attributes\items\rest\Rest;
 use Ubiquity\contents\transformation\TransformersManager;
 use Ubiquity\controllers\rest\RestServer;
+use Ubiquity\orm\DAO;
 use Ubiquity\utils\http\URequest;
 
 #[Rest()]
@@ -76,6 +78,7 @@ class MainRestController extends \Ubiquity\controllers\rest\api\json\JsonRestCon
 	* @authorization
 	*/
 	#[Post('{resource}',priority: 0)]
+    #[Authorization()]
 	public function add($resource) {
         TransformersManager::startProd('transform');
 		parent::add_($resource);
@@ -100,5 +103,19 @@ class MainRestController extends \Ubiquity\controllers\rest\api\json\JsonRestCon
         $srv->setAllowedOrigins(['http://127.0.0.1:3000']);
         TransformersManager::startProd('toView');
         return $srv;
+    }
+
+    #[Post('connect',priority: 10)]
+    public function connect() {
+        if(URequest::has('login')) {
+            $login = URequest::post('login');
+            $user = DAO::getOne(User::class, 'login=?',$login);
+            if($user) {
+                if(URequest::password_verify('password', $user->getPassword())) {
+                    parent::connect();
+                }
+            }
+            throw new \Exception('Unauthorized',401);
+        }
     }
 }
